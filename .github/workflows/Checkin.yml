@@ -3,16 +3,15 @@ name: HIFITI-Auto-Checkin
 on:
   workflow_dispatch:
   schedule:
-    # UTC+8 ??:??
+    # UTC ??:??
     - cron: "0 0 * * *"
 
 jobs:
   checkin:
     name: Checkin
     runs-on: ubuntu-latest
-    environment: HIFINI
     env:
-      COOKIES: ${{ secrets.COOKIES }}
+      ACCOUNTS: ${{ secrets.ACCOUNTS }}
 
     steps:
       - uses: actions/checkout@v4
